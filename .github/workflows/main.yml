@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      -name: "Login to docker"
+      - name: "Login to docker"
         run: docker login --username ${{ secret.DOCKER_USERNAME}} --password ${{ secret.DOCKER_TOKEN}}
 
-      -name: "building docker image"
+      - name: "building docker image"
         run: docker build -t ${{ secret.DOCKER_USERNAME}}/myimage .
